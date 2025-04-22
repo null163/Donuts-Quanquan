@@ -1,0 +1,154 @@
+@font-face {
+    font-family: myFont;
+    src: url(../fonts/douyuFont0-9.woff2);
+}
+
+body {
+    position: relative;
+    margin: 0;
+    overflow: hidden;
+    background-color: #c6d4fd;
+}
+
+.flipH {
+    transform: scaleX(-1);
+}
+
+.flipV {
+    transform: scaleY(-1);
+}
+
+.flipVH {
+    transform: scale(-1, -1);
+}
+
+.whole {
+    margin: 0 auto;
+    position: relative;
+}
+
+.scoreAnimate {
+    position: absolute;
+    z-index: 4;
+}
+
+.scAniText {
+    font-weight: bold;
+    display: flex;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    font-size: 0px;
+    font-family: myFont;
+    color: #3a588a;
+}
+
+.bgHead {
+    position: absolute;
+    z-index: 3;
+    background-image: url(../assets/bg4.png);
+}
+
+.background {
+    position: absolute;
+    z-index: 1;
+    background-image: url(../assets/bg.png);
+}
+
+.bgKeyboard {
+    display: flex;
+    position: absolute;
+    z-index: 2;
+    background-image: url(../assets/bg3.png);
+}
+
+.mask {
+    position: absolute;
+    z-index: 2;
+    background-color: #c6d4fd;
+}
+
+.pause {
+    position: absolute;
+    background-image: url(../assets/pause_default.png);
+}
+
+.speedUp {
+    position: absolute;
+    background-image: url(../assets/speed_default.png);
+}
+
+.dirControl {
+    position: absolute;
+    background-image: url(../assets/keyboard_default.png);
+}
+
+.key {
+    position: absolute;
+    z-index: 3;
+}
+
+.scoreContainer {
+    position: absolute;
+}
+
+.score {
+    font-family: myFont;
+    color: #ffffff;
+}
+
+.tip {
+    position: absolute;
+    background-image: url(../assets/tip.png);
+}
+
+.pausePanelContainer {
+    position: relative;
+    z-index: 5;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pausePanel {
+    background-image: url(../assets/pause_musicOFF.png);
+}
+
+.musicON {
+    position: absolute;
+}
+
+.continue {
+    position: absolute;
+}
+
+.gameOverPanelContainer {
+    position: relative;
+    z-index: 5;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.gameOverPanel {
+    position: absolute;
+    background-image: url(../assets/gameOverPanel1.png);
+}
+
+.again {
+    position: absolute;
+}
+
+.maxScore {
+    position: absolute;
+    font-family: myFont;
+    color: #fc5eef;
+}
+
+.currentScore {
+    position: absolute;
+    font-family: myFont;
+    color: #fc8c43;
+}

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>贪吃圈大作战</title>
+  <link rel="icon" href="./assets/headV.png">
+  <link rel="stylesheet" href="./styles/snake.css">
+</head>
+
+<body>
+
+  <img src="./assets/bent.png" style="display: none;">
+  <img src="./assets/deadH.png" style="display: none;">
+  <img src="./assets/deadV.png" style="display: none;">
+  <img src="./assets/headH.png" style="display: none;">
+  <img src="./assets/headV.png" style="display: none;">
+  <img src="./assets/rushH.png" style="display: none;">
+  <img src="./assets/rushV.png" style="display: none;">
+  <img src="./assets/straightH.png" style="display: none;">
+  <img src="./assets/straightV.png" style="display: none;">
+  <img src="./assets/tailH.png" style="display: none;">
+  <img src="./assets/tailV.png" style="display: none;">
+
+  <img src="./assets/hole.png" style="display: none;">
+  <img src="./assets/food1.png" style="display: none;">
+  <img src="./assets/food2.png" style="display: none;">
+  <img src="./assets/food3.png" style="display: none;">
+
+  <img src="./assets/pause_musicOFF.png" style="display: none;">
+  <img src="./assets/pause_musicON.png" style="display: none;">
+
+  <img src="./assets/pause_hold.png" style="display: none;">
+
+  <!-- 分数动画 -->
+  <div class="scoreAnimate">
+    <div class="scAniText">+5</div>
+  </div>
+
+  <div class="whole">
+    <!-- 版头 -->
+    <div class="bgHead">
+      <div class="scoreContainer">
+        <span class="score" id="zeroText" style="vertical-align: top;">00000</span><span class="score" id="scoreText"
+          style="vertical-align: top;">00000</span>
+      </div>
+    </div>
+
+    <!-- 游戏主界面 -->
+    <div class="background"></div>
+
+    <!-- 按键区 -->
+    <div class="bgKeyboard">
+
+      <!-- 暂停、加速 -->
+      <div>
+        <div class="pause"></div>
+        <div class="speedUp"></div>
+      </div>
+
+      <!-- 方向键 -->
+      <div>
+        <div class="dirControl"></div>
+        <div class="key"></div>
+      </div>
+
+    </div>
+
+    <!-- 蒙版 -->
+    <div class="mask" id="maskLeft"></div>
+    <div class="mask" id="maskRight"></div>
+  </div>
+
+  <div class="pausePanelContainer">
+    <div class="pausePanel">
+      <div class="musicON"></div>
+      <div class="continue"></div>
+    </div>
+  </div>
+
+  <div class="gameOverPanelContainer">
+    <div class="gameOverPanel"></div>
+    <div class="again"></div>
+    <div class="maxScore">66644</div>
+    <div class="currentScore">10000</div>
+  </div>
+
+  <img src="./assets/down_hold.png" style="display: none;">
+  <img src="./assets/left_hold.png" style="display: none;">
+  <img src="./assets/right_hold.png" style="display: none;">
+  <img src="./assets/up_hold.png" style="display: none;">
+
+  <img src="./assets/gameOverPanel1.png" style="display: none;">
+  <img src="./assets/gameOverPanel2.png" style="display: none;">
+  <img src="./assets/gameOverPanel3.png" style="display: none;">
+
+  <audio src="./sounds/万无引力.mp3" id="bgm1" preload="auto"></audio>
+  <audio src="./sounds/雨夜随想.mp3" id="bgm2" preload="auto"></audio>
+
+  <div class="tip"></div>
+
+  <script src="./scripts/snake.js"></script>
+</body>
+
+</html>
