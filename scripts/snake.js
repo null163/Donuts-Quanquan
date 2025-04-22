@@ -1084,22 +1084,24 @@ window.addEventListener('keydown', function (e) {  //键盘按下
   }
   else if (pause) return
 
-  switch (e.key) {
-    case 'ArrowUp':
-      dirToUp()
-      break
-    case 'ArrowDown':
-      dirToDown()
-      break
-    case 'ArrowLeft':
-      dirToLeft()
-      break
-    case 'ArrowRight':
-      dirToRight()
-      break
-    case 's':
-      if (!speedUp) speedStart()
-      break
+  if (!settling) {
+    switch (e.key) {
+      case 'ArrowUp':
+        dirToUp()
+        break
+      case 'ArrowDown':
+        dirToDown()
+        break
+      case 'ArrowLeft':
+        dirToLeft()
+        break
+      case 'ArrowRight':
+        dirToRight()
+        break
+      case 's':
+        if (!speedUp) speedStart()
+        break
+    }
   }
 
   //初始状态：按方向键开始游戏
