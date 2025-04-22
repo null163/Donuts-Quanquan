@@ -1051,19 +1051,16 @@ function GameOver() { //游戏结束
   else currentScoreText.innerHTML = totalScore
   if (totalScore <= bound1) {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel1.png)'
-    windowHeight = window.innerHeight
     gameOverPanel.style.width = goWidth + 'px'
     gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
   }
   else if (totalScore <= bound2) {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel2.png)'
-    windowHeight = window.innerHeight
     gameOverPanel.style.width = goWidth_tmp + 'px'
     gameOverPanel.style.backgroundSize = goWidth_tmp + 'px ' + goHeight + 'px'
   }
   else {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel3.png)'
-    windowHeight = window.innerHeight
     gameOverPanel.style.width = goWidth + 'px'
     gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
   }
