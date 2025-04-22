@@ -1133,6 +1133,10 @@ window.addEventListener('keyup', function (e) {  //键盘松开
   }
 })
 
+BGM1.addEventListener("canplaythrough", () => {
+  BGM1.play()
+})
+
 //播放下一首bgm
 function playNextBGM() {
   if (music === 1) {
@@ -1368,7 +1372,7 @@ function gameOnControl() {  //初始状态：按方向键开始游戏 //settle�
     if (firstLoad) {
       firstLoad = false
       musicIsOn = true
-      BGM1.play()
+      // BGM1.play()
       pausePanel.style.backgroundImage = 'url(./assets/pause_musicON.png)'
     }
     startLoop()
