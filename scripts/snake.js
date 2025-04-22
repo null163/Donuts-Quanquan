@@ -80,6 +80,7 @@ let musicWidth, musicHeight, musicTop, musicLeft, continueHeight, againWidth
 let continueWidth, continueTop, continueLeft, goHeight, goWidth, scAniWidth
 let maxScore1, maxScore2, currentScore1, currentScore2, scAniHeight, scAniFont1
 let goContainerHeight, goContainerwidth, goContainerTop, goContainerLeft
+let goWidth_tmp
 
 let keyFrames, timing, animation, scAniOutline, keyFrames2, timing2, keyFrames3
 
@@ -250,7 +251,7 @@ function resize() {
 
   goHeight = 210 / 659 * windowHeight
   goWidth = 245 / 659 * windowHeight
-  // goWidth = 260 / 659 * windowHeight
+  goWidth_tmp = 260 / 659 * windowHeight
   goTop = -30 / 659 * windowHeight
   goLeft = -20 / 659 * windowHeight
 
@@ -546,8 +547,7 @@ function scoreRefresh(sc) { //分数更新
 }
 
 function scoreRefreshLoop() { //分数更新循环
-  if (i < 10) i++
-  else i += 5
+  i++
   scoreRefresh(i)
   if (i < totalScore + snakeScore) {
     setTimeout(scoreRefreshLoop, 25)
@@ -1052,21 +1052,18 @@ function GameOver() { //游戏结束
   if (totalScore <= bound1) {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel1.png)'
     windowHeight = window.innerHeight
-    goWidth = 245 / 659 * windowHeight
     gameOverPanel.style.width = goWidth + 'px'
     gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
   }
   else if (totalScore <= bound2) {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel2.png)'
     windowHeight = window.innerHeight
-    goWidth = 260 / 659 * windowHeight
-    gameOverPanel.style.width = goWidth + 'px'
-    gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
+    gameOverPanel.style.width = goWidth_tmp + 'px'
+    gameOverPanel.style.backgroundSize = goWidth_tmp + 'px ' + goHeight + 'px'
   }
   else {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel3.png)'
     windowHeight = window.innerHeight
-    goWidth = 245 / 659 * windowHeight
     gameOverPanel.style.width = goWidth + 'px'
     gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
   }
