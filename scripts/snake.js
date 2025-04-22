@@ -533,7 +533,7 @@ function scoreRefresh(sc) { //分数更新
   let t = 0
   let s = sc
   while (s > 0) {
-    s = parseInt(s) / digit
+    s = parseInt(s) / 10
     t++
   }
   if (sc === 0) t = 2
