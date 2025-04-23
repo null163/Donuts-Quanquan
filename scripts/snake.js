@@ -341,8 +341,8 @@ function init() { //初始化
   foodSpeed32 = defaultSpeed
   totalScore = 0
   snakeScore = 0
-  bound1 = 5
-  bound2 = 10
+  bound1 = 150
+  bound2 = 300
   foodscore1 = 5
   foodscore2 = 10
   foodscore3 = 15
