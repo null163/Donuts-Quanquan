@@ -1446,7 +1446,6 @@ document.addEventListener('touchstart', function (e) {  //方向键点击
     const x = obj.clientX - (keyboardLeft + (windowWidth - gameWidth) / 2)
     const y = obj.clientY - (keyboardTop + gameWidth + Top)
     if (x > -30 / 659 * windowHeight && y > -60 / 659 * windowHeight && x < dirControlWidth + 60 / 659 * windowHeight && y < dirControlWidth + 60 / 659 * windowHeight) {
-      // console.log(parseInt(x) + ', ' + parseInt(y));
       if (x < y && x + y < dirControlWidth) {
         dirToLeft()
         gameOnControl()
