@@ -619,26 +619,26 @@ function drawGame() { //打印贴图
   }
 
   //打印头底部的挡板
-  if (snake.length === 2) {
+  if (snake.length >= 2) {
     const mask = document.createElement("img")
     mask.style.position = 'absolute'
     mask.style.top = snake[0].y * cellSize / 659 * windowHeight + 'px'
     mask.style.left = snake[0].x * cellSize / 659 * windowHeight + 'px'
     mask.style.width = cellSize / 659 * windowHeight + 'px'
     mask.style.height = cellSize / 659 * windowHeight + 'px'
-    if (snake[snake.length - 1].dirX === 0 && snake[snake.length - 1].dirY === 1) { //下
+    if (snake[1].dirX === 0 && snake[1].dirY === 1) { //下
       mask.src = './assets/straightV.png'
       mask.style.height = cellSize / 2 / 659 * windowHeight + 'px'
     }
-    else if (snake[snake.length - 1].dirX === 0 && snake[snake.length - 1].dirY === -1) { //上
+    else if (snake[1].dirX === 0 && snake[1].dirY === -1) { //上
       mask.src = './assets/straightV.png'
       mask.style.top = (snake[0].y * cellSize + cellSize / 2) / 659 * windowHeight + 'px'
     }
-    else if (snake[snake.length - 1].dirX === -1 && snake[snake.length - 1].dirY === 0) { //左
+    else if (snake[1].dirX === -1 && snake[1].dirY === 0) { //左
       mask.src = './assets/straightH.png'
       mask.style.left = (snake[0].x * cellSize + cellSize / 2) / 659 * windowHeight + 'px'
     }
-    else if (snake[snake.length - 1].dirX === 1 && snake[snake.length - 1].dirY === 0) { //右
+    else if (snake[1].dirX === 1 && snake[1].dirY === 0) { //右
       mask.src = './assets/straightH.png'
       mask.style.width = cellSize / 2 / 659 * windowHeight + 'px'
     }
