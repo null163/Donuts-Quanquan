@@ -1411,13 +1411,13 @@ function gameOnControl() {  //初始状态：按方向键开始游戏 //settle�
 }
 
 document.addEventListener('touchmove', function (e) {  //方向键按住拖动  
-  e.preventDefault();
+  e.preventDefault()
+  if (settling) return
   const touch = [...e.touches]
   touch.forEach((obj) => {
     const x = obj.clientX - (keyboardLeft + (windowWidth - gameWidth) / 2)
     const y = obj.clientY - (keyboardTop + gameWidth + Top)
     if (x > -30 / 659 * windowHeight && y > -60 / 659 * windowHeight && x < dirControlWidth + 60 / 659 * windowHeight && y < dirControlWidth + 60 / 659 * windowHeight) {
-      // console.log(parseInt(x) + ', ' + parseInt(y));
       if (x < y && x + y < dirControlWidth) {
         dirToLeft()
         gameOnControl()
@@ -1440,6 +1440,7 @@ document.addEventListener('touchmove', function (e) {  //方向键按住拖动
 
 document.addEventListener('touchstart', function (e) {  //方向键点击
   e.preventDefault();
+  if (settling) return
   const touch = [...e.touches]
   touch.forEach((obj) => {
     const x = obj.clientX - (keyboardLeft + (windowWidth - gameWidth) / 2)
