@@ -618,6 +618,33 @@ function drawGame() { //打印贴图
     })
   }
 
+  //打印头底部的挡板
+  if (snake.length === 2) {
+    const mask = document.createElement("img")
+    mask.style.position = 'absolute'
+    mask.style.top = snake[0].y * cellSize / 659 * windowHeight + 'px'
+    mask.style.left = snake[0].x * cellSize / 659 * windowHeight + 'px'
+    mask.style.width = cellSize / 659 * windowHeight + 'px'
+    mask.style.height = cellSize / 659 * windowHeight + 'px'
+    if (snake[snake.length - 1].dirX === 0 && snake[snake.length - 1].dirY === 1) { //下
+      mask.src = './assets/straightV.png'
+      mask.style.height = cellSize / 2 / 659 * windowHeight + 'px'
+    }
+    else if (snake[snake.length - 1].dirX === 0 && snake[snake.length - 1].dirY === -1) { //上
+      mask.src = './assets/straightV.png'
+      mask.style.top = (snake[0].y * cellSize + cellSize / 2) / 659 * windowHeight + 'px'
+    }
+    else if (snake[snake.length - 1].dirX === -1 && snake[snake.length - 1].dirY === 0) { //左
+      mask.src = './assets/straightH.png'
+      mask.style.left = (snake[0].x * cellSize + cellSize / 2) / 659 * windowHeight + 'px'
+    }
+    else if (snake[snake.length - 1].dirX === 1 && snake[snake.length - 1].dirY === 0) { //右
+      mask.src = './assets/straightH.png'
+      mask.style.width = cellSize / 2 / 659 * windowHeight + 'px'
+    }
+    gameContainer.appendChild(mask)
+  }
+
   //打印尾部
   if (snake.length > 1) {
     const tail = document.createElement("img")
@@ -703,6 +730,7 @@ function drawGame() { //打印贴图
   //打印头部
   let div = document.createElement("div")
   let head = document.createElement("img")
+  div.backgroundImage = './assets/straightV.png'
   div.style.position = 'absolute'
   if (!gameOn && !gameOver) {
     head.src = './assets/sleep.png'
@@ -718,7 +746,7 @@ function drawGame() { //打印贴图
     if (gameOver) head.src = './assets/deadV.png'
     else if (speedUp) head.src = './assets/rushV.png'
     else head.src = './assets/headV.png'
-    div.style.top = (snake[0].y * cellSize - 7) / 659 * windowHeight + 'px'
+    div.style.top = (snake[0].y * cellSize - 6) / 659 * windowHeight + 'px'
     div.style.left = (snake[0].x * cellSize - 6) / 659 * windowHeight + 'px'
     head.style.width = (cellSize + 11) / 659 * windowHeight + 'px'
     head.style.height = (cellSize + 7) / 659 * windowHeight + 'px'
@@ -743,8 +771,8 @@ function drawGame() { //打印贴图
     if (gameOver) head.src = './assets/deadH.png'
     else if (speedUp) head.src = './assets/rushH.png'
     else head.src = './assets/headH.png'
-    div.style.top = (snake[0].y * cellSize - 6) / 659 * windowHeight + 'px'
-    div.style.left = (snake[0].x * cellSize - 1) / 659 * windowHeight + 'px'
+    div.style.top = (snake[0].y * cellSize - 5.5) / 659 * windowHeight + 'px'
+    div.style.left = (snake[0].x * cellSize - 2) / 659 * windowHeight + 'px'
     head.style.width = (cellSize + 9) / 659 * windowHeight + 'px'
     head.style.height = (cellSize + 11) / 659 * windowHeight + 'px'
   }
