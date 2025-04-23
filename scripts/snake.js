@@ -238,33 +238,27 @@ function resize() {
   continueButton.style.top = continueTop + 'px'
   continueButton.style.left = continueLeft + 'px'
 
-  goContainerHeight = 180 / 659 * windowHeight
-  goContainerwidth = 213 / 659 * windowHeight
-  goContainerTop = 45 / 659 * windowHeight
-  goContainerLeft = (windowWidth - goContainerwidth - 4 / 659 * windowHeight) / 2
-
-  // 游戏结束界面
-  gameOverPanelContainer.style.height = goContainerHeight + 'px'
-  gameOverPanelContainer.style.width = goContainerwidth + 'px'
-  gameOverPanelContainer.style.top = goContainerTop + 'px'
-  gameOverPanelContainer.style.left = goContainerLeft + 'px'
-
   goHeight = 210 / 659 * windowHeight
   goWidth = 245 / 659 * windowHeight
   goWidth_tmp = 260 / 659 * windowHeight
-  goTop = -30 / 659 * windowHeight
-  goLeft = -20 / 659 * windowHeight
+  goTop = 20 / 659 * windowHeight
+  goLeft = (windowWidth - goWidth - 4 / 659 * windowHeight) / 2
+
+  // 游戏结束界面
+  gameOverPanelContainer.style.height = goHeight + 'px'
+  gameOverPanelContainer.style.width = goWidth + 'px'
+  gameOverPanelContainer.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
+  gameOverPanelContainer.style.top = goTop + 'px'
+  gameOverPanelContainer.style.left = goLeft + 'px'
 
   // 游戏结束界面-背景
   gameOverPanel.style.height = goHeight + 'px'
   gameOverPanel.style.width = goWidth + 'px'
   gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
-  gameOverPanel.style.top = goTop + 'px'
-  gameOverPanel.style.left = goLeft + 'px'
 
-  againWidth = 100 / 659 * windowHeight
-  againTop = 147 / 659 * windowHeight
-  againLeft = 73 / 659 * windowHeight
+  againWidth = 110 / 659 * windowHeight
+  againTop = 151 / 659 * windowHeight
+  againLeft = 72 / 659 * windowHeight
 
   // 重来按钮
   again.style.height = continueHeight + 'px'
@@ -273,8 +267,8 @@ function resize() {
   again.style.left = againLeft + 'px'
   again.style.backgroundSize = againWidth + 'px ' + continueHeight + 'px'
 
-  maxScore1 = 59 / 659 * windowHeight
-  maxScore2 = 115 / 659 * windowHeight
+  maxScore1 = 90 / 659 * windowHeight
+  maxScore2 = 135 / 659 * windowHeight
 
   // 最高分
   maxScoreText.style.top = maxScore1 + 'px'
@@ -282,8 +276,8 @@ function resize() {
   maxScoreText.style.fontSize = font + 'px'
   maxScoreText.style.letterSpacing = letter + 'px'
 
-  currentScore1 = 88 / 659 * windowHeight
-  currentScore2 = 115 / 659 * windowHeight
+  currentScore1 = 118 / 659 * windowHeight
+  currentScore2 = 135 / 659 * windowHeight
 
   // 当前分
   currentScoreText.style.top = currentScore1 + 'px'
@@ -297,6 +291,7 @@ function resize() {
   scAniFont1 = 14 / 659 * windowHeight
   scAniOutline = 1.2 / 659 * windowHeight
 
+  //分数动画
   keyFrames = [
     { fontSize: 0 + 'px' },
     { fontSize: scAniFont1 + 'px', offset: 0.15 },
@@ -309,6 +304,7 @@ function resize() {
     easing: 'ease-in-out'
   }
 
+  //暂停框动画
   keyFrames2 = [
     { height: 0 + 'px', width: 0 + 'px', backgroundSize: '0px 0px' },
     { height: pausePanelHeight + 'px', width: pausePanelWidth + 'px', backgroundSize: `${pausePanelWidth}px ${pausePanelHeight}px` }
@@ -320,6 +316,7 @@ function resize() {
     easing: 'ease-in-out'
   }
 
+  //结算框动画
   keyFrames3 = [
     { height: 0 + 'px', width: 0 + 'px', backgroundSize: '0px 0px' },
     { height: goHeight + 'px', width: goWidth + 'px', backgroundSize: `${goWidth}px ${goHeight}px` }
@@ -344,8 +341,8 @@ function init() { //初始化
   foodSpeed32 = defaultSpeed
   totalScore = 0
   snakeScore = 0
-  bound1 = 150
-  bound2 = 300
+  bound1 = 5
+  bound2 = 10
   foodscore1 = 5
   foodscore2 = 10
   foodscore3 = 15
@@ -560,11 +557,11 @@ function drawGame() { //打印贴图
   //打印洞口
   if (holeExist || settle) {
     const img = document.createElement("img")
-    img.style.top = hole.y * cellSize / 659 * windowHeight + 'px'
-    img.style.left = hole.x * cellSize / 659 * windowHeight + 'px'
+    img.style.top = (hole.y * cellSize - 1) / 659 * windowHeight + 'px'
+    img.style.left = (hole.x * cellSize - 1) / 659 * windowHeight + 'px'
     img.style.position = 'absolute'
-    img.style.width = cellSize / 659 * windowHeight + 'px'
-    img.style.height = cellSize / 659 * windowHeight + 'px'
+    img.style.width = (cellSize + 2) / 659 * windowHeight + 'px'
+    img.style.height = (cellSize + 2) / 659 * windowHeight + 'px'
     img.src = './assets/hole.png'
     gameContainer.appendChild(img)
   }
@@ -1049,20 +1046,26 @@ function GameOver() { //游戏结束
     currentScoreText.innerHTML = Math.floor(totalScore / 100) / 100 + '万'
   }
   else currentScoreText.innerHTML = totalScore
-  if (totalScore <= bound1) {
+  if (totalScore < bound1) {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel1.png)'
     gameOverPanel.style.width = goWidth + 'px'
     gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
+    gameOverPanelContainer.style.width = goWidth + 'px'
+    gameOverPanelContainer.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
   }
-  else if (totalScore <= bound2) {
+  else if (totalScore < bound2) {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel2.png)'
     gameOverPanel.style.width = goWidth_tmp + 'px'
     gameOverPanel.style.backgroundSize = goWidth_tmp + 'px ' + goHeight + 'px'
+    gameOverPanelContainer.style.width = goWidth_tmp + 'px'
+    gameOverPanelContainer.style.backgroundSize = goWidth_tmp + 'px ' + goHeight + 'px'
   }
   else {
     gameOverPanel.style.backgroundImage = 'url(./assets/gameOverPanel3.png)'
     gameOverPanel.style.width = goWidth + 'px'
     gameOverPanel.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
+    gameOverPanelContainer.style.width = goWidth + 'px'
+    gameOverPanelContainer.style.backgroundSize = goWidth + 'px ' + goHeight + 'px'
   }
   let s = 900
   setTimeout(function () {
@@ -1072,7 +1075,7 @@ function GameOver() { //游戏结束
   setTimeout(function () {
     maxScoreText.style.visibility = 'visible'
     currentScoreText.style.visibility = 'visible'
-  }, s + 250)
+  }, s + 350)
 }
 
 window.addEventListener('keydown', function (e) {  //键盘按下

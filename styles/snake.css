@@ -130,11 +130,12 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    /* background-color: #ff5ddf33; */
 }
 
 .gameOverPanel {
-    position: absolute;
     background-image: url(../assets/gameOverPanel1.png);
+    /* background-color: #5d86ff3b; */
 }
 
 .again {
