@@ -83,9 +83,8 @@ let goContainerHeight, goContainerwidth, goContainerTop, goContainerLeft
 let goWidth_tmp
 let keyFrames, timing, animation, scAniOutline, keyFrames2, timing2, keyFrames3
 
-let loadingWidth, loadingHeight, loadingTop, loadingTextLeft, loadingFont
+let loadingTop, loadingFont
 const loadingContainer = document.querySelector('.loadingContainer')
-const loadingImg = document.querySelector('.loadingImg')
 const loadingText = document.querySelector('.loadingText')
 
 //按屏幕比例缩放
@@ -327,8 +326,6 @@ function resize() {
   ]
 
   //loading
-  loadingHeight = 137 / 659 * windowHeight
-  loadingWidth = 350 / 659 * windowHeight
   loadingTop = 160 / 659 * windowHeight
   loadingFont = 17 / 659 * windowHeight
 
@@ -336,12 +333,6 @@ function resize() {
   loadingContainer.style.width = windowWidth + 'px'
   loadingContainer.style.top = 0
   loadingContainer.style.left = 0
-
-  loadingImg.style.height = loadingHeight + 'px'
-  loadingImg.style.width = loadingWidth + 'px'
-  loadingImg.style.top = loadingTop + 'px'
-  loadingImg.style.left = (windowWidth - loadingWidth) / 2 + 'px'
-  loadingImg.style.backgroundSize = loadingWidth + 'px ' + loadingHeight + 'px'
 
   loadingText.style.top = loadingTop + 145 / 659 * windowHeight + 'px'
   loadingText.style.left = windowWidth / 2 - 60 / 659 * windowHeight + 'px'

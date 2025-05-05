@@ -148,12 +148,6 @@ body {
     z-index: 6;
 }
 
-.loadingImg {
-    background-image: url(../assets/loading.png);
-    position: absolute;
-    z-index: 7;
-}
-
 .loadingText {
     position: absolute;
     z-index: 7;
