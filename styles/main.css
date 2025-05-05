@@ -3,6 +3,11 @@
     src: url(../fonts/douyuFont0-9.woff2);
 }
 
+@font-face {
+    font-family: myFont2;
+    src: url(../fonts/huxiaoboLOADING.woff2);
+}
+
 body {
     position: relative;
     margin: 0;
@@ -46,20 +51,17 @@ body {
 .bgHead {
     position: absolute;
     z-index: 3;
-    background-image: url(../assets/bg4.png);
 }
 
 .background {
     position: absolute;
     z-index: 1;
-    background-image: url(../assets/bg.png);
 }
 
 .bgKeyboard {
     display: flex;
     position: absolute;
     z-index: 2;
-    background-image: url(../assets/bg3.png);
 }
 
 .mask {
@@ -70,17 +72,14 @@ body {
 
 .pause {
     position: absolute;
-    background-image: url(../assets/pause_default.png);
 }
 
 .speedUp {
     position: absolute;
-    background-image: url(../assets/speed_default.png);
 }
 
 .dirControl {
     position: absolute;
-    background-image: url(../assets/keyboard_default.png);
 }
 
 .key {
@@ -99,7 +98,6 @@ body {
 
 .tip {
     position: absolute;
-    background-image: url(../assets/tip.png);
 }
 
 .pausePanelContainer {
@@ -109,10 +107,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-}
-
-.pausePanel {
-    background-image: url(../assets/pause_musicOFF.png);
 }
 
 .musicON {
@@ -130,12 +124,6 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: #ff5ddf33; */
-}
-
-.gameOverPanel {
-    background-image: url(../assets/gameOverPanel1.png);
-    /* background-color: #5d86ff3b; */
 }
 
 .again {
@@ -152,4 +140,23 @@ body {
     position: absolute;
     font-family: myFont;
     color: #fc8c43;
+}
+
+.loadingContainer {
+    background-color: #c6d4fd;
+    position: absolute;
+    z-index: 6;
+}
+
+.loadingImg {
+    background-image: url(../assets/loading.png);
+    position: absolute;
+    z-index: 7;
+}
+
+.loadingText {
+    position: absolute;
+    z-index: 7;
+    font-family: myFont2;
+    color: #3a588a;
 }

@@ -6,40 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>贪吃圈大作战</title>
   <link rel="icon" href="./assets/headV.png">
-  <link rel="stylesheet" href="./styles/snake.css">
+  <link rel="stylesheet" href="./styles/main.css">
 </head>
 
 <body>
-  <img src="./assets/bent.png" style="display: none;">
-  <img src="./assets/deadH.png" style="display: none;">
-  <img src="./assets/deadV.png" style="display: none;">
-  <img src="./assets/headH.png" style="display: none;">
-  <img src="./assets/headV.png" style="display: none;">
-  <img src="./assets/rushH.png" style="display: none;">
-  <img src="./assets/rushV.png" style="display: none;">
-  <img src="./assets/straightH.png" style="display: none;">
-  <img src="./assets/straightV.png" style="display: none;">
-  <img src="./assets/tailH.png" style="display: none;">
-  <img src="./assets/tailV.png" style="display: none;">
-
-  <img src="./assets/hole.png" style="display: none;">
-  <img src="./assets/food1.png" style="display: none;">
-  <img src="./assets/food2.png" style="display: none;">
-  <img src="./assets/food3.png" style="display: none;">
-
-  <img src="./assets/down_hold.png" style="display: none;">
-  <img src="./assets/left_hold.png" style="display: none;">
-  <img src="./assets/right_hold.png" style="display: none;">
-  <img src="./assets/up_hold.png" style="display: none;">
-
-  <img src="./assets/pause_musicOFF.png" style="display: none;">
-  <img src="./assets/pause_musicON.png" style="display: none;">
-
-  <img src="./assets/gameOverPanel1.png" style="display: none;">
-  <img src="./assets/gameOverPanel2.png" style="display: none;">
-  <img src="./assets/gameOverPanel3.png" style="display: none;">
-
-  <img src="./assets/pause_hold.png" style="display: none;">
+  <div class="loadingContainer">
+    <div class="loadingImg"></div>
+    <div class="loadingText">LOADING…0%</div>
+  </div>
 
   <!-- 分数动画 -->
   <div class="scoreAnimate">
@@ -99,7 +73,8 @@
 
   <div class="tip"></div>
 
-  <script src="./scripts/snake.js"></script>
+  <script src="./scripts/loading.js"></script>
+  <script src="./scripts/main.js"></script>
 </body>
 
 </html>

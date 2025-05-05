@@ -1,0 +1,35 @@
+.bgHead {
+  background-image: url(../assets/bg4.png);
+}
+
+.background {
+  background-image: url(../assets/bg.png);
+}
+
+.bgKeyboard {
+  background-image: url(../assets/bg3.png);
+}
+
+.pause {
+  background-image: url(../assets/pause_default.png);
+}
+
+.speedUp {
+  background-image: url(../assets/speed_default.png);
+}
+
+.dirControl {
+  background-image: url(../assets/keyboard_default.png);
+}
+
+.tip {
+  background-image: url(../assets/tip.png);
+}
+
+.pausePanel {
+  background-image: url(../assets/pause_musicOFF.png);
+}
+
+.gameOverPanel {
+  background-image: url(../assets/gameOverPanel1.png);
+}
